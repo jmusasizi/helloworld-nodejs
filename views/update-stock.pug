@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Edit Stock
+    Link(rel="stylesheet" href="/css/forms.css")     
+  body
+    h2 Edit Stock Details
+    form(action="/update-stock-page?id"+stockItem._id method="POST")
+      input(type="text" name="stockname" placeholder="Stock Name" value=stockItem.stockname)
+      select(name="stocktype")
+        option(value="" disabled selected) Select a Stock Type
+        option(value="cereals" selected = stockItem.stocktype === "cereals") Cereals
+        option(value="grain" selected = stockItem.stocktype === "grain") Grain
+      input(type="number" name="tonnage" placeholder="Tonnage (kg)" value=stockItem.tonnage)
+      input(type="number" name="cost" placeholder="Cost per Kg (UGX)" value=stockItem.cost)
+      input(type="number" name="sellingprice" placeholder="Selling Price per Kg (UGX)" value=stockItem.sellingprice)
+      input(type="text" name="dealer" placeholder="Dealer's Name" value=stockItem.dealer)
+      select(name="storagebranch")
+        option(value="" disabled selected) Select Storage Branch
+        option(value="maganjo" selected = stockItem.storagebranch === "maganjo") Maganjo
+        option(value="matuga" selected = stockItem.storagebranch === "matuga") Matuga        
+      input(type="text" name="contact" placeholder="Dealer's Contact" value=stockItem.contact)
+      input(type="submit" value="Save Changes")
+    a(href="/stock-list-page") Go Back To Stock List Page.
+

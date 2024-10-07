@@ -1,0 +1,29 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "This is a node.js project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "helloWorld",
+    "node.js"
+  ],
+  "author": "jmusasizi",
+  "license": "ISC",
+  "dependencies": {
+    "connect-ensure-login": "^0.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.2",
+    "nodemon": "^3.1.4",
+    "passport": "^0.7.0",
+    "passport-local-mongoose": "^8.0.0",
+    "pug": "^3.0.3",
+    "session": "^0.1.0"
+  }
+}

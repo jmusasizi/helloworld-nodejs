@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Signup Page
+    Link(rel="stylesheet" href="/css/forms.css")     
+  body
+    h2 Sign Up
+    form(action="/signup-page" method="POST")
+      input(type="text" name="username" placeholder="Your Name")
+      input(type="email" name="email" placeholder="Email Address")
+      select(name="role")
+        option(value="" disabled selected) Select Your Role
+        option(value="manager") Manager
+        option(value="sales-agent") Sales Agent
+      select(name="branch")
+        option(value="" disabled selected) Select Your Branch
+        option(value="maganjo") Maganjo
+        option(value="matuga") Matuga        
+      input(type="password" name="password" placeholder="Password")
+      input(type="submit" value="Sign Up")
+    a(href="/login-page") Already have an account? Login
+

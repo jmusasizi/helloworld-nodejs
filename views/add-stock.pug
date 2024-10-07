@@ -1,0 +1,27 @@
+npndoctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Add Stock
+    Link(rel="stylesheet" href="/css/forms.css")     
+  body
+    h2 Add New Stock
+    form(action="/add-stock-page" method="POST")
+      input(type="text" name="stockname" placeholder="Stock Name")
+      select(name="stocktype")
+        option(value="" disabled selected) Select a Stock Type
+        option(value="cereals") Cereals
+        option(value="grain") Grain
+      input(type="number" name="tonnage" placeholder="Tonnage (kg)")
+      input(type="number" name="cost" placeholder="Cost per Kg (UGX)")
+      input(type="number" name="sellingprice" placeholder="Selling Price per Kg (UGX)")
+      input(type="text" name="dealer" placeholder="Dealer's Name")
+      select(name="storagebranch")
+        option(value="" disabled selected) Select Storage Branch
+        option(value="maganjo") Maganjo
+        option(value="matuga") Matuga        
+      input(type="text" name="contact" placeholder="Dealer's Contact")
+      input(type="submit" value="Add Stock")
+    a(href="/all-stock-page") Go Back To Stock List Page.
+

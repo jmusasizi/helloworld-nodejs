@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    title Stock Page
+    Link(rel="stylesheet" href="/css/table-list.css")     
+  body
+    h1 Stock List
+    table
+      thead
+        tr
+          th Stock Name
+          th Stock Type
+          th Tonnage (kg)
+          th Cost Per Kg (UGX)
+          th Selling Price Per Kg (UGX)
+          th Action
+          th
+      tbody
+        if stock.length 
+        each stockItem in stock
+          tr
+            td #{stockItem.stockname}
+            td #{stockItem.stocktype}
+            td #{stockItem.tonnage}
+            td #{stockItem.cost}
+            td #{stockItem.sellingprice}
+            td 
+              a(href="/update-stock-page/"+stockItem._id class="edit-btn") Edit
+            td
+              form(method="POST" action="/delete-stock")
+                input(type="hidden" placeholder="" Name="id" value=stockItem._id )
+                button(class="delete-btn" type="submit") Delete
+        else 
+          tr
+            td No stock added yet !!!

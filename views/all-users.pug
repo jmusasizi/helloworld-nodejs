@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  head
+    title Users Page
+    Link(rel="stylesheet" href="/css/table-list.css")     
+  body
+    h1 All Users List
+    table
+      thead
+        tr
+          th Staff Name
+          th Email Address
+          th Role
+          th Branch
+          th Action
+          th
+      tbody
+        if users.length 
+        each user in users
+          tr
+            td #{user.username}
+            td #{user.email}
+            td #{user.role}
+            td #{user.branch}
+            td 
+              a(href="/update-user-page/"+user._id class="edit-btn") Edit
+            td
+              form(method="POST" action="/delete-user")
+                input(type="hidden" placeholder="" Name="id" value=user._id )
+                button(class="delete-btn" type="submit") Delete
+        else 
+          tr
+            td No users added yet !!!
